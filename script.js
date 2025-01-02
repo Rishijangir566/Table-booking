@@ -9,13 +9,15 @@ let form = document.querySelector("form")
 let people = document.querySelector("#people")
 let Time = document.querySelector("#Time")
 let date = document.querySelector("#Date")
+let confirmMessage=document.querySelector("#confirmMessage")
+let confirmReservation=document.querySelector("#confirm-Reservation")
 
 let customer = {};
 let clickButton;
 
 let Data = localStorage.getItem("CsData") !== null ?
     JSON.parse(localStorage.getItem("CsData")) : []
-
+ console.log(Data)
 bookBtn.addEventListener("click", bookTable)
 
 console.log(customer)
@@ -36,16 +38,9 @@ chooseTable.addEventListener("click", chooseYourTable)
 
 function chooseYourTable(e) {
     e.preventDefault()
-    console.log(people.value)
-    console.log(date.value)
-    console.log(Time.value)
-    customer = {
-        person: people.value,
-        date: date.value,
-        time: Time.value,
-        tableNo: clickButton
-    }
     screen2.classList.remove("hidden")
+    chooseTable.classList.add("bg-gray-400", "cursor-not-allowed");
+    chooseTable.disabled = true;
 
 }
 
@@ -54,7 +49,7 @@ tableBtn.addEventListener("click", tableconfirm)
 function tableconfirm(e) {
     if (e.target.nodeName === "BUTTON") {
         console.log(e.target.value)
-        clickButton = e.target.value
+        clickButton = e.target.innerHTML
         screen2.classList.add("hidden")
     }
 }
@@ -65,5 +60,21 @@ function confirmBooking(e) {
     e.preventDefault()
     screen1.classList.add("hidden")
     screen3.classList.remove("hidden")
+    console.log(people.value)
+    console.log(date.value)
+    console.log(Time.value)
+    customer = {
+        person: people.value,
+        date: date.value,
+        time: Time.value,
+        tableNo: clickButton
+    }
     storedata()
+    confirmMessage.innerHTML=`your are making a reservation for ${customer.person} on ${customer.date} at ${customer.time}`
+
 }
+confirmReservation.addEventListener("click",()=>{
+    screen3.classList.add("hidden")
+    bookBtn.classList.remove("hidden")
+    alert("Your reservation is sucessfully")
+})
