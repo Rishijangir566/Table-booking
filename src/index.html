@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+
+
+  <div class="flex justify-center mt-[18rem]" id="bookBtn" >
+    <button class="bg-blue-600 px-7 text-3xl py-3 text-white rounded" >Book </button>
+  </div>
+
+
+  <div class=" hidden my-10 w-1/3 mx-auto border-2 bg-gray-300 border-sky-950 relative" id="screen1" >
+    <h4 class="text-xl text-center my-2"> Book a table</h4>
+    <p class="text-center my-4">This is where you'll add the details of your booking</p>
+    <form action="" method="post">
+      <label class="mx-6 my-4" for="People">People : </label>
+         <select name="People" id="people" class=" mx-10 my-4" > 
+          <option value="" disabled selected>No of people</option>
+          <option value="1 Person">1 Person</option>
+          <option value="2 Person">2 Person</option>
+          <option value="3 Person">3 Person</option>
+          <option value="4 Person">4 Person</option>
+          <option value="5 Person">5 Person</option>
+          <option value="6 Person">6 Person</option>
+          <option value="7 Person">7 Person</option>
+         </select> 
+         <br>
+         <label class="mx-6 my-4" for="Date">Date : </label>
+         <input type="date" name="Date" placeholder="choose your date" id="Date" class=" mx-14 my-4">
+         <br>
+      <label class="mx-6 my-4" for="Time">Time : </label>
+         <select name="Time" id="Time" class=" mx-14 my-4" > 
+          <option value="" disabled selected>Time</option>
+          <option value="10.00">10.00</option>
+          <option value="11.00">11.00</option>
+          <option value="12.00">12.00</option>
+          <option value="1.00">1.00</option>
+          <option value="2.00">2.00</option>
+          <option value="3.00">3.00</option>
+          <option value="4.00">4.00</option>
+          <option value="5.00">5.00</option>
+          <option value="6.00">6.00</option>
+          <option value="7.00">7.00</option>
+          <option value="8.00">8.00</option>
+         </select> 
+         <div class=" text-center my-6">
+           <button id="chooseTable" class="bg-blue-600 px-7 text-xl py-1 mr-4 text-white rounded" >Choose your table </button>
+           <button  type="submit" id="booking" class="bg-blue-600 px-7 text-xl py-1 ml-4 text-white rounded" >Book </button>
+          </div>
+    </form>
+   
+       
+        
+        
+      
+  </div>
+
+
+  <div class=" mx-32 hidden border-2 w-1/4 shadow-lg bg-pink-300 border-sky-950 absolute top-32 left-96" id="screen2" >
+    <h4 class="text-xl text-center my-2"> Book a table</h4>
+    <div class="flex flex-wrap gap-2 justify-center my-5 " id="tableBtn" >
+      <button class="px-5 py-3 border-2 border-black ">1</button>
+      <button class="px-5 py-3 border-2 border-black ">2</button>
+      <button class="px-5 py-3 border-2 border-black ">3</button>
+      <button class="px-5 py-3 border-2 border-black ">4</button>
+      <button class="px-5 py-3 border-2 border-black ">5</button>
+      <button class="px-5 py-3 border-2 border-black ">6</button>
+      <button class="px-5 py-3 border-2 border-black ">7</button>
+      <button class="px-5 py-3 border-2 border-black ">8</button>
+      <button class="px-5 py-3 border-2 border-black ">9</button>
+      <button class="px-5 py-3 border-2 border-black ">10</button>
+    </div>
+  </div>
+
+  <div id="screen3" class=" hidden my-20 w-1/3 mx-auto border-2 text-center bg-gray-300 border-sky-950">
+    <h4 class="text-xl text-center my-2"> Contact Details</h4>
+     <p> hello</p>
+    <label class="mx-3 text-start" for="Name">Name : </label>
+     <input type="text " placeholder="Name" name="Name" class="w-72 border-black border-2 my-3 mx-4"><br>
+    <label class="mx-3 my-4" for="Number"> Ph-No : </label>
+     <input type="number" name="Number" placeholder="Number" class="w-72 border-black border-2 my-3 mx-4">
+     <button id="confirm-Reservation" class="bg-blue-600 px-5 text-xl py-1 my-4 text-white rounded">Confirm Reservation</button>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
