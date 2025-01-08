@@ -60,9 +60,10 @@ function confirmBooking(e) {
     e.preventDefault()
     screen1.classList.add("hidden")
     screen3.classList.remove("hidden")
-    console.log(people.value)
-    console.log(date.value)
-    console.log(Time.value)
+
+    const formattedTime = Time.value > 11 ? `${Time.value} PM` : `${Time.value} AM`;
+
+
     customer = {
         person: people.value,
         date: date.value,
@@ -70,7 +71,7 @@ function confirmBooking(e) {
         tableNo: clickButton
     }
     storedata()
-    confirmMessage.innerHTML=`your are making a reservation for ${customer.person} on ${customer.date} at ${customer.time}`
+    confirmMessage.innerHTML=`your are making a reservation for ${customer.person} on ${customer.date} at ${formattedTime}`
 
 }
 confirmReservation.addEventListener("click",()=>{
